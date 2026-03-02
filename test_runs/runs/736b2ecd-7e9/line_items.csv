@@ -1,0 +1,2 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Hydraulic Pump Assembly,50.0,EA,105.0,5250.0,,,,0.5

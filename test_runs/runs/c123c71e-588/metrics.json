@@ -1,0 +1,17 @@
+{
+  "run_id": "c123c71e-588",
+  "start_time": "2026-02-26T23:58:17.818179",
+  "end_time": "2026-02-26T23:58:17.821467",
+  "duration_seconds": 0.0,
+  "documents_processed": 4,
+  "line_items_extracted": 3,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 0,
+  "findings_by_severity": {},
+  "findings_by_category": {},
+  "match_status": "matched",
+  "decision": "auto_post",
+  "exceptions_count": 0,
+  "auto_posted": true
+}

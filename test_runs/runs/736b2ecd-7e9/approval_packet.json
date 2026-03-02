@@ -1,0 +1,70 @@
+{
+  "invoice_number": "INV-004",
+  "vendor_name": "Delta Co",
+  "total_amount": 6195.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "b15c2094",
+      "agent": "agent_e_matching",
+      "category": "price_variance",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Line 1: price variance 5.0%",
+      "description": "Invoice price (105.0) vs PO price (100.0): 5.0% variance (tolerance: \u00b12.0%)",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "line": 1,
+        "invoice_price": 105.0,
+        "po_price": 100.0,
+        "variance_pct": 5.0
+      }
+    },
+    {
+      "finding_id": "5adf3ed9",
+      "agent": "agent_e_matching",
+      "category": "price_variance",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Total amount variance exceeds tolerance",
+      "description": "Invoice total (6195.0) vs PO total (5000.0): variance 250.0 (5.0%)",
+      "evidence": [],
+      "recommendation": "Review pricing and approve variance",
+      "open_questions": [],
+      "data": {
+        "invoice_total": 6195.0,
+        "po_total": 5000.0,
+        "variance": 250.0,
+        "variance_pct": 5.0
+      }
+    },
+    {
+      "finding_id": "5c660099",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 2 error(s), 1 warning(s)",
+  "priority": "high",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Review pricing and approve variance",
+    "Request vendor tax ID before processing"
+  ],
+  "evidence_summary": [
+    "[ERROR] Line 1: price variance 5.0%",
+    "[ERROR] Total amount variance exceeds tolerance"
+  ]
+}

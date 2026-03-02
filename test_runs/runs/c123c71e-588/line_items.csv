@@ -1,0 +1,4 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Printer Paper A4 - 10 Reams,10.0,PKG,12.0,120.0,18.0,21.6,,0.5
+2,Ballpoint Pens - Box of 50,5.0,BOX,18.0,90.0,18.0,16.2,,0.5
+3,Stapler Heavy Duty,2.0,EA,20.0,40.0,18.0,7.2,,0.5

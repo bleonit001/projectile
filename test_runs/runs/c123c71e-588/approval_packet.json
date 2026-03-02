@@ -1,0 +1,14 @@
+{
+  "invoice_number": "INV-015",
+  "vendor_name": "Nu Office Supplies",
+  "total_amount": 295.0,
+  "currency": "USD",
+  "exceptions": [],
+  "approval_required": false,
+  "approver_role": "auto",
+  "approver_reason": "No exceptions \u2013 auto-approval eligible",
+  "priority": "normal",
+  "recommended_action": "auto_post",
+  "follow_up_actions": [],
+  "evidence_summary": []
+}

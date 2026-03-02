@@ -1,0 +1,29 @@
+{
+  "run_id": "64a3865f-30e",
+  "timestamp": "2026-02-26T23:58:17.781079",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/low_ocr_confidence",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/low_ocr_confidence/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/low_ocr_confidence/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Kappa Indu"
+  ],
+  "po_references": [],
+  "grn_references": [],
+  "risk_indicators": [
+    "invoice_missing_vendor_id:invoice.json"
+  ],
+  "evidence_index": [],
+  "metadata": {
+    "scenario": "Low OCR confidence - many fields missing or null simulating poor extraction quality"
+  }
+}

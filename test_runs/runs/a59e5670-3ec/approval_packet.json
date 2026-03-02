@@ -1,0 +1,87 @@
+{
+  "invoice_number": "INV-003",
+  "vendor_name": "Gamma LLC",
+  "total_amount": 11033.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "67461379",
+      "agent": "agent_e_matching",
+      "category": "quantity_variance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Line 1: quantity variance 10.0%",
+      "description": "Invoice qty (110.0) vs PO qty (100.0): 10.0% variance (tolerance: \u00b15.0%)",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "line": 1,
+        "invoice_qty": 110.0,
+        "po_qty": 100.0,
+        "variance_pct": 10.0
+      }
+    },
+    {
+      "finding_id": "3888c992",
+      "agent": "agent_e_matching",
+      "category": "quantity_variance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Line 2: quantity variance 10.0%",
+      "description": "Invoice qty (55.0) vs PO qty (50.0): 10.0% variance (tolerance: \u00b15.0%)",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "line": 2,
+        "invoice_qty": 55.0,
+        "po_qty": 50.0,
+        "variance_pct": 10.0
+      }
+    },
+    {
+      "finding_id": "5cc44670",
+      "agent": "agent_e_matching",
+      "category": "price_variance",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Total amount variance exceeds tolerance",
+      "description": "Invoice total (11033.0) vs PO total (8500.0): variance 850.0 (10.0%)",
+      "evidence": [],
+      "recommendation": "Review pricing and approve variance",
+      "open_questions": [],
+      "data": {
+        "invoice_total": 11033.0,
+        "po_total": 8500.0,
+        "variance": 850.0,
+        "variance_pct": 10.0
+      }
+    },
+    {
+      "finding_id": "db8104dc",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 1 error(s), 3 warning(s)",
+  "priority": "high",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Review pricing and approve variance",
+    "Request vendor tax ID before processing"
+  ],
+  "evidence_summary": [
+    "[ERROR] Total amount variance exceeds tolerance"
+  ]
+}

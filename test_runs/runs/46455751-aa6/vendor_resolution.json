@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V005",
+    "vendor_name": "Epsilon Services",
+    "tax_id": "US55-7778888",
+    "address": null,
+    "bank_account": "BANK-005-EPSILON",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

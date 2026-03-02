@@ -1,0 +1,37 @@
+{
+  "run_id": "4fde32c4-a5e",
+  "timestamp": "2026-02-26T23:58:17.763618",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/new_vendor",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/new_vendor/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/new_vendor/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Unknown Supplier XYZ"
+  ],
+  "po_references": [
+    "PO-1010"
+  ],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/new_vendor/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1010"
+    }
+  ],
+  "metadata": {
+    "scenario": "New vendor not found in master data - requires vendor onboarding"
+  }
+}

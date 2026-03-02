@@ -1,0 +1,101 @@
+{
+  "invoice_number": "INV-011",
+  "vendor_name": "Acme Corp",
+  "total_amount": 48000.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "49e805d5",
+      "agent": "agent_c_vendor",
+      "category": "bank_change",
+      "severity": "critical",
+      "confidence": 1.0,
+      "title": "Bank account mismatch \u2013 possible fraud risk",
+      "description": "Bank account on invoice (NEW-BANK-999) differs from vendor master (BANK-001-ACME)",
+      "evidence": [
+        {
+          "source_file": "vendor_master",
+          "page": null,
+          "field": "bank_account",
+          "bbox": null,
+          "text_snippet": "Master: BANK-001-ACME"
+        }
+      ],
+      "recommendation": "Verify bank details directly with vendor before payment",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "2dd624d6",
+      "agent": "agent_e_matching",
+      "category": "missing_grn",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "No GRN for 3-way matching",
+      "description": "GRN required for goods invoices but none found",
+      "evidence": [],
+      "recommendation": "Obtain goods receipt confirmation before payment",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "a6ff8cdf",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "608a9fef",
+      "agent": "agent_g_anomaly",
+      "category": "anomaly",
+      "severity": "info",
+      "confidence": 0.5,
+      "title": "Suspiciously round amount",
+      "description": "Invoice amount 48000.0 is a round number \u2013 may warrant review",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "amount": 48000.0
+      }
+    },
+    {
+      "finding_id": "4969df27",
+      "agent": "agent_g_anomaly",
+      "category": "anomaly",
+      "severity": "warning",
+      "confidence": 0.7,
+      "title": "Amount just under approval threshold ($50,000.00)",
+      "description": "Invoice amount $48,000.00 is within 5.0% below the $50,000.00 approval threshold",
+      "evidence": [],
+      "recommendation": "Review for potential threshold manipulation",
+      "open_questions": [],
+      "data": {
+        "amount": 48000.0,
+        "threshold": 50000.0,
+        "distance_pct": 4.0
+      }
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "director",
+  "approver_reason": "Requires review: 1 critical issue(s), 3 warning(s)",
+  "priority": "critical",
+  "recommended_action": "hold",
+  "follow_up_actions": [
+    "Verify bank details directly with vendor before payment",
+    "Obtain goods receipt confirmation before payment",
+    "Request vendor tax ID before processing",
+    "Review for potential threshold manipulation"
+  ],
+  "evidence_summary": [
+    "[CRITICAL] Bank account mismatch \u2013 possible fraud risk (evidence: vendor_master)"
+  ]
+}

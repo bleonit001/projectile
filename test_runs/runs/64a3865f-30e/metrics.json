@@ -1,0 +1,29 @@
+{
+  "run_id": "64a3865f-30e",
+  "start_time": "2026-02-26T23:58:17.780002",
+  "end_time": "2026-02-26T23:58:17.784092",
+  "duration_seconds": 0.0,
+  "documents_processed": 2,
+  "line_items_extracted": 2,
+  "extraction_confidence_avg": 0.6667,
+  "extraction_confidence_min": 0.0,
+  "findings_total": 10,
+  "findings_by_severity": {
+    "error": 4,
+    "warning": 5,
+    "info": 1
+  },
+  "findings_by_category": {
+    "low_confidence": 1,
+    "new_vendor": 1,
+    "validation_error": 3,
+    "missing_po": 1,
+    "total_mismatch": 1,
+    "compliance": 2,
+    "anomaly": 1
+  },
+  "match_status": "unmatched",
+  "decision": "route_for_approval",
+  "exceptions_count": 4,
+  "auto_posted": false
+}

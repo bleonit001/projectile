@@ -1,0 +1,3 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Industrial CNC Machine,2.0,EA,20000.0,40000.0,,,,0.5
+2,Installation and Calibration,1.0,LOT,8000.0,8000.0,,,,0.5

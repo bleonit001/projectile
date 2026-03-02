@@ -1,0 +1,63 @@
+{
+  "run_id": "736b2ecd-7e9",
+  "timestamp": "2026-02-26T23:58:17.726645",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/grn.json",
+      "document_type": "goods_receipt_note",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Delta Co"
+  ],
+  "po_references": [
+    "PO-1004"
+  ],
+  "grn_references": [
+    "GRN-2004"
+  ],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1004"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1004"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/price_variance/grn.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1004"
+    }
+  ],
+  "metadata": {
+    "scenario": "Price variance beyond tolerance (>2%) - invoice unit price exceeds PO by 5%"
+  }
+}

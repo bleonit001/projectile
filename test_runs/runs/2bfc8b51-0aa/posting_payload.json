@@ -1,0 +1,33 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "INV-002",
+  "vendor_id": "V002",
+  "posting_date": "2026-02-26",
+  "invoice_date": "2025-02-01",
+  "due_date": "2025-03-03",
+  "currency": "USD",
+  "total_amount": 3776.0,
+  "tax_amount": 576.0,
+  "po_number": "PO-1002",
+  "payment_terms": null,
+  "line_items": [
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Industrial Bearings",
+      "amount": 2400.0,
+      "tax_code": "",
+      "po_line_ref": "1"
+    },
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Lubricant Drums",
+      "amount": 800.0,
+      "tax_code": "",
+      "po_line_ref": "2"
+    }
+  ],
+  "status": "ready",
+  "decision": "auto_post"
+}

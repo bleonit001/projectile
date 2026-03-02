@@ -1,0 +1,3 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Consulting Services - Phase 1,40.0,HR,75.0,3000.0,,,,0.5
+2,Consulting Services - Phase 2,20.0,HR,100.0,2000.0,,,,0.5

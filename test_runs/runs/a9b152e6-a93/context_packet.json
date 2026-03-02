@@ -1,0 +1,27 @@
+{
+  "run_id": "a9b152e6-a93",
+  "timestamp": "2026-02-26T23:58:17.743967",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/credit_note",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/credit_note/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/credit_note/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Acme Corp"
+  ],
+  "po_references": [],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [],
+  "metadata": {
+    "scenario": "Credit note referencing a prior invoice with negative amounts"
+  }
+}

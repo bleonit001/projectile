@@ -1,0 +1,66 @@
+{
+  "match_type": "3-way",
+  "overall_status": "matched",
+  "invoice_number": "INV-001",
+  "po_number": "PO-1001",
+  "grn_numbers": [
+    "GRN-2001"
+  ],
+  "line_matches": [
+    {
+      "invoice_line": 1,
+      "po_line": 1,
+      "grn_line": 1,
+      "quantity_match": true,
+      "price_match": true,
+      "quantity_variance_pct": 0.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 100.0,
+      "quantity_po": 100.0,
+      "quantity_grn": 100.0,
+      "price_invoice": 25.0,
+      "price_po": 25.0,
+      "status": "matched",
+      "notes": []
+    },
+    {
+      "invoice_line": 2,
+      "po_line": 2,
+      "grn_line": 2,
+      "quantity_match": true,
+      "price_match": true,
+      "quantity_variance_pct": 0.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 50.0,
+      "quantity_po": 50.0,
+      "quantity_grn": 50.0,
+      "price_invoice": 30.0,
+      "price_po": 30.0,
+      "status": "matched",
+      "notes": []
+    },
+    {
+      "invoice_line": 3,
+      "po_line": 3,
+      "grn_line": 3,
+      "quantity_match": true,
+      "price_match": true,
+      "quantity_variance_pct": 0.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 20.0,
+      "quantity_po": 20.0,
+      "quantity_grn": 20.0,
+      "price_invoice": 25.0,
+      "price_po": 25.0,
+      "status": "matched",
+      "notes": []
+    }
+  ],
+  "total_invoice": 5310.0,
+  "total_po": 4500.0,
+  "total_variance": 0.0,
+  "total_variance_pct": 0.0,
+  "within_tolerance": true,
+  "findings": [],
+  "summary": "3-way matching: 3/3 lines matched. Overall: matched"
+}

@@ -1,0 +1,63 @@
+{
+  "invoice_number": "INV-009",
+  "invoice_date": "2025-03-15",
+  "due_date": "2025-04-14",
+  "vendor_name": "Theta Supplies",
+  "vendor_id": "V009",
+  "vendor_address": null,
+  "vendor_tax_id": null,
+  "vendor_bank_account": null,
+  "buyer_name": null,
+  "buyer_address": null,
+  "buyer_tax_id": null,
+  "po_number": "PO-1009",
+  "currency": "USD",
+  "subtotal": 6000.0,
+  "tax_amount": 1500.0,
+  "total_amount": 7500.0,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Office Furniture - Desk",
+      "quantity": 10.0,
+      "unit": "EA",
+      "unit_price": 350.0,
+      "amount": 3500.0,
+      "tax_rate": 25.0,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    },
+    {
+      "line_number": 2,
+      "description": "Office Furniture - Chair",
+      "quantity": 10.0,
+      "unit": "EA",
+      "unit_price": 250.0,
+      "amount": 2500.0,
+      "tax_rate": 25.0,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    }
+  ],
+  "payment_terms": null,
+  "notes": null,
+  "confidence_scores": {
+    "invoice_number": 1.0,
+    "invoice_date": 1.0,
+    "vendor_name": 1.0,
+    "total_amount": 1.0,
+    "po_number": 1.0,
+    "line_items": 1.0
+  },
+  "evidence": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/tax_mismatch/invoice.json",
+      "page": null,
+      "field": "full_document",
+      "bbox": null,
+      "text_snippet": null
+    }
+  ]
+}

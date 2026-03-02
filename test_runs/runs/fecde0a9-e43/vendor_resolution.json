@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V003",
+    "vendor_name": "Gamma LLC",
+    "tax_id": "US33-1112222",
+    "address": null,
+    "bank_account": "BANK-003-GAMMA",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

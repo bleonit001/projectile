@@ -1,0 +1,63 @@
+{
+  "invoice_number": "INV-013",
+  "invoice_date": "2025-04-01",
+  "due_date": "2025-05-01",
+  "vendor_name": "Lambda Consulting",
+  "vendor_id": "V013",
+  "vendor_address": null,
+  "vendor_tax_id": null,
+  "vendor_bank_account": null,
+  "buyer_name": null,
+  "buyer_address": null,
+  "buyer_tax_id": null,
+  "po_number": null,
+  "currency": "USD",
+  "subtotal": 7500.0,
+  "tax_amount": 0.0,
+  "total_amount": 7500.0,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Strategic Advisory Services - Q1",
+      "quantity": 1.0,
+      "unit": "LOT",
+      "unit_price": 5000.0,
+      "amount": 5000.0,
+      "tax_rate": null,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    },
+    {
+      "line_number": 2,
+      "description": "Market Research Report",
+      "quantity": 1.0,
+      "unit": "EA",
+      "unit_price": 2500.0,
+      "amount": 2500.0,
+      "tax_rate": null,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    }
+  ],
+  "payment_terms": null,
+  "notes": null,
+  "confidence_scores": {
+    "invoice_number": 1.0,
+    "invoice_date": 1.0,
+    "vendor_name": 1.0,
+    "total_amount": 1.0,
+    "po_number": 0.0,
+    "line_items": 1.0
+  },
+  "evidence": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_po_invoice/invoice.json",
+      "page": null,
+      "field": "full_document",
+      "bbox": null,
+      "text_snippet": null
+    }
+  ]
+}

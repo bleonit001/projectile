@@ -1,0 +1,26 @@
+{
+  "run_id": "4d5ad107-9e4",
+  "start_time": "2026-02-26T23:58:17.754989",
+  "end_time": "2026-02-26T23:58:17.759988",
+  "duration_seconds": 0.0,
+  "documents_processed": 3,
+  "line_items_extracted": 2,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 6,
+  "findings_by_severity": {
+    "error": 3,
+    "warning": 2,
+    "info": 1
+  },
+  "findings_by_category": {
+    "missing_po": 1,
+    "tax_mismatch": 3,
+    "compliance": 1,
+    "anomaly": 1
+  },
+  "match_status": "unmatched",
+  "decision": "route_for_approval",
+  "exceptions_count": 3,
+  "auto_posted": false
+}

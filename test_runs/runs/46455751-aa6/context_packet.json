@@ -1,0 +1,37 @@
+{
+  "run_id": "46455751-aa6",
+  "timestamp": "2026-02-26T23:58:17.731826",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/header_mismatch",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/header_mismatch/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/header_mismatch/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Epsilon Services"
+  ],
+  "po_references": [
+    "PO-1005"
+  ],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/header_mismatch/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1005"
+    }
+  ],
+  "metadata": {
+    "scenario": "Header total does not equal sum of line items - arithmetic mismatch"
+  }
+}

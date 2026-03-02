@@ -1,0 +1,30 @@
+{
+  "invoice_number": "INV-014",
+  "vendor_name": "Mu Logistics",
+  "total_amount": 10030.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "22b74c41",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": false,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 1 warning(s)",
+  "priority": "normal",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Request vendor tax ID before processing"
+  ],
+  "evidence_summary": []
+}

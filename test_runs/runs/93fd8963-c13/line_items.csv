@@ -1,0 +1,2 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Aluminum Sheets 2mm,500.0,EA,15.0,7500.0,,,,0.5

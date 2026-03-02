@@ -1,0 +1,25 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "INV-014",
+  "vendor_id": "V014",
+  "posting_date": "2026-02-26",
+  "invoice_date": "2025-04-05",
+  "due_date": "2025-05-05",
+  "currency": "USD",
+  "total_amount": 10030.0,
+  "tax_amount": 1530.0,
+  "po_number": "PO-1014",
+  "payment_terms": null,
+  "line_items": [
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Copper Wire Spools 500m",
+      "amount": 8500.0,
+      "tax_code": "",
+      "po_line_ref": "1"
+    }
+  ],
+  "status": "ready",
+  "decision": "auto_post"
+}

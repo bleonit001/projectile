@@ -1,0 +1,76 @@
+{
+  "run_id": "cbce2389-968",
+  "timestamp": "2026-02-26T23:58:17.794229",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/grn_part1.json",
+      "document_type": "goods_receipt_note",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/grn_part2.json",
+      "document_type": "goods_receipt_note",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Mu Logistics"
+  ],
+  "po_references": [
+    "PO-1014"
+  ],
+  "grn_references": [
+    "GRN-3002",
+    "GRN-3001"
+  ],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1014"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1014"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/grn_part1.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1014"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/split_deliveries/grn_part2.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1014"
+    }
+  ],
+  "metadata": {
+    "scenario": "Split deliveries - multiple GRNs for one PO line (60 + 40 = 100)"
+  }
+}

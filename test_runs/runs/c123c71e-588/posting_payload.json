@@ -1,0 +1,41 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "INV-015",
+  "vendor_id": "V015",
+  "posting_date": "2026-02-26",
+  "invoice_date": "2025-04-10",
+  "due_date": "2025-05-10",
+  "currency": "USD",
+  "total_amount": 295.0,
+  "tax_amount": 45.0,
+  "po_number": "PO-1015",
+  "payment_terms": null,
+  "line_items": [
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Printer Paper A4 - 10 Reams",
+      "amount": 120.0,
+      "tax_code": "",
+      "po_line_ref": "1"
+    },
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Ballpoint Pens - Box of 50",
+      "amount": 90.0,
+      "tax_code": "",
+      "po_line_ref": "2"
+    },
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Stapler Heavy Duty",
+      "amount": 40.0,
+      "tax_code": "",
+      "po_line_ref": "3"
+    }
+  ],
+  "status": "ready",
+  "decision": "auto_post"
+}

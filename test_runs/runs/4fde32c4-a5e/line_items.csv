@@ -1,0 +1,2 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Custom Fabrication Work,1.0,LOT,12000.0,12000.0,,,,0.5

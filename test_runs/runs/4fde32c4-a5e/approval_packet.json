@@ -1,0 +1,61 @@
+{
+  "invoice_number": "INV-010",
+  "vendor_name": "Unknown Supplier XYZ",
+  "total_amount": 14160.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "3e52f510",
+      "agent": "agent_c_vendor",
+      "category": "new_vendor",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Vendor not found in master data",
+      "description": "Vendor 'Unknown Supplier XYZ' could not be matched to any vendor in master data (best score: 22.857142857142854)",
+      "evidence": [],
+      "recommendation": "Create new vendor record or verify vendor name",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "b173699f",
+      "agent": "agent_e_matching",
+      "category": "missing_po",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "No purchase order for matching",
+      "description": "Invoice has no associated PO and policy requires PO matching",
+      "evidence": [],
+      "recommendation": "Route for non-PO invoice approval",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "91a7837f",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 2 error(s), 1 warning(s)",
+  "priority": "high",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Create new vendor record or verify vendor name",
+    "Route for non-PO invoice approval",
+    "Request vendor tax ID before processing"
+  ],
+  "evidence_summary": [
+    "[ERROR] Vendor not found in master data",
+    "[ERROR] No purchase order for matching"
+  ]
+}

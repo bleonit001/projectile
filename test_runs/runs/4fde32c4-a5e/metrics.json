@@ -1,0 +1,24 @@
+{
+  "run_id": "4fde32c4-a5e",
+  "start_time": "2026-02-26T23:58:17.762592",
+  "end_time": "2026-02-26T23:58:17.765608",
+  "duration_seconds": 0.0,
+  "documents_processed": 2,
+  "line_items_extracted": 1,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 3,
+  "findings_by_severity": {
+    "error": 2,
+    "warning": 1
+  },
+  "findings_by_category": {
+    "new_vendor": 1,
+    "missing_po": 1,
+    "compliance": 1
+  },
+  "match_status": "unmatched",
+  "decision": "route_for_approval",
+  "exceptions_count": 2,
+  "auto_posted": false
+}

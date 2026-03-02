@@ -1,0 +1,24 @@
+{
+  "run_id": "a9b152e6-a93",
+  "start_time": "2026-02-26T23:58:17.742939",
+  "end_time": "2026-02-26T23:58:17.746042",
+  "duration_seconds": 0.0,
+  "documents_processed": 2,
+  "line_items_extracted": 2,
+  "extraction_confidence_avg": 0.8333,
+  "extraction_confidence_min": 0.0,
+  "findings_total": 4,
+  "findings_by_severity": {
+    "error": 1,
+    "warning": 3
+  },
+  "findings_by_category": {
+    "missing_po": 1,
+    "validation_error": 2,
+    "compliance": 1
+  },
+  "match_status": "unmatched",
+  "decision": "route_for_approval",
+  "exceptions_count": 1,
+  "auto_posted": false
+}

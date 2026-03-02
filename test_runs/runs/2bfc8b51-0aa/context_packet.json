@@ -1,0 +1,49 @@
+{
+  "run_id": "2bfc8b51-0aa",
+  "timestamp": "2026-02-26T23:58:17.709043",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Beta Industries"
+  ],
+  "po_references": [
+    "PO-1002"
+  ],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1002"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1002"
+    }
+  ],
+  "metadata": {
+    "scenario": "PO match but no GRN - route for receipt confirmation"
+  }
+}

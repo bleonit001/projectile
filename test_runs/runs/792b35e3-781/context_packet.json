@@ -1,0 +1,63 @@
+{
+  "run_id": "792b35e3-781",
+  "timestamp": "2026-02-26T23:58:17.697378",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/grn.json",
+      "document_type": "goods_receipt_note",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Acme Corp"
+  ],
+  "po_references": [
+    "PO-1001"
+  ],
+  "grn_references": [
+    "GRN-2001"
+  ],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1001"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1001"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_invoice/grn.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1001"
+    }
+  ],
+  "metadata": {
+    "scenario": "Clean invoice with perfect PO + GRN match (should auto-post)"
+  }
+}

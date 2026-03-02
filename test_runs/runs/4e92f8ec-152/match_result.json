@@ -1,0 +1,62 @@
+{
+  "match_type": "2-way",
+  "overall_status": "matched",
+  "invoice_number": "INV-008",
+  "po_number": "PO-1008",
+  "grn_numbers": [],
+  "line_matches": [
+    {
+      "invoice_line": 1,
+      "po_line": 1,
+      "grn_line": null,
+      "quantity_match": true,
+      "price_match": true,
+      "quantity_variance_pct": 0.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 200.0,
+      "quantity_po": 200.0,
+      "quantity_grn": null,
+      "price_invoice": 5000.0,
+      "price_po": 5000.0,
+      "status": "matched",
+      "notes": []
+    },
+    {
+      "invoice_line": 2,
+      "po_line": 2,
+      "grn_line": null,
+      "quantity_match": true,
+      "price_match": true,
+      "quantity_variance_pct": 0.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 100.0,
+      "quantity_po": 100.0,
+      "quantity_grn": null,
+      "price_invoice": 8000.0,
+      "price_po": 8000.0,
+      "status": "matched",
+      "notes": []
+    }
+  ],
+  "total_invoice": 1980000.0,
+  "total_po": 1800000.0,
+  "total_variance": 0.0,
+  "total_variance_pct": 0.0,
+  "within_tolerance": true,
+  "findings": [
+    {
+      "finding_id": "9d15cb1e",
+      "agent": "agent_e_matching",
+      "category": "missing_grn",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "No GRN for 3-way matching",
+      "description": "GRN required for goods invoices but none found",
+      "evidence": [],
+      "recommendation": "Obtain goods receipt confirmation before payment",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "summary": "2-way matching: 2/2 lines matched. Overall: matched"
+}

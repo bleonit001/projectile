@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V006",
+    "vendor_name": "Zeta Manufacturing",
+    "tax_id": "US66-9990000",
+    "address": null,
+    "bank_account": "BANK-006-ZETA",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

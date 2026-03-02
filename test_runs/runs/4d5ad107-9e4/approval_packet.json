@@ -1,0 +1,114 @@
+{
+  "invoice_number": "INV-009",
+  "vendor_name": "Theta Supplies",
+  "total_amount": 7500.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "55cafd5d",
+      "agent": "agent_e_matching",
+      "category": "missing_po",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "No purchase order for matching",
+      "description": "Invoice has no associated PO and policy requires PO matching",
+      "evidence": [],
+      "recommendation": "Route for non-PO invoice approval",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "4ee9647d",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "a3b330e3",
+      "agent": "agent_f_compliance",
+      "category": "tax_mismatch",
+      "severity": "error",
+      "confidence": 0.95,
+      "title": "Line 1: tax rate mismatch",
+      "description": "Tax rate 25.0% differs from expected 18% (tolerance: \u00b10.5%)",
+      "evidence": [],
+      "recommendation": "Verify applicable tax rate for this line item",
+      "open_questions": [],
+      "data": {
+        "line": 1,
+        "actual_rate": 25.0,
+        "expected_rate": 18
+      }
+    },
+    {
+      "finding_id": "e321988c",
+      "agent": "agent_f_compliance",
+      "category": "tax_mismatch",
+      "severity": "error",
+      "confidence": 0.95,
+      "title": "Line 2: tax rate mismatch",
+      "description": "Tax rate 25.0% differs from expected 18% (tolerance: \u00b10.5%)",
+      "evidence": [],
+      "recommendation": "Verify applicable tax rate for this line item",
+      "open_questions": [],
+      "data": {
+        "line": 2,
+        "actual_rate": 25.0,
+        "expected_rate": 18
+      }
+    },
+    {
+      "finding_id": "49a83292",
+      "agent": "agent_f_compliance",
+      "category": "tax_mismatch",
+      "severity": "warning",
+      "confidence": 0.9,
+      "title": "Overall effective tax rate mismatch",
+      "description": "Effective tax rate 25.0% differs from expected 18%",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "effective_rate": 25.0,
+        "expected_rate": 18
+      }
+    },
+    {
+      "finding_id": "9597de3c",
+      "agent": "agent_g_anomaly",
+      "category": "anomaly",
+      "severity": "info",
+      "confidence": 0.5,
+      "title": "Suspiciously round amount",
+      "description": "Invoice amount 7500.0 is a round number \u2013 may warrant review",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "amount": 7500.0
+      }
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 3 error(s), 2 warning(s)",
+  "priority": "high",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Route for non-PO invoice approval",
+    "Request vendor tax ID before processing",
+    "Verify applicable tax rate for this line item"
+  ],
+  "evidence_summary": [
+    "[ERROR] No purchase order for matching",
+    "[ERROR] Line 1: tax rate mismatch",
+    "[ERROR] Line 2: tax rate mismatch"
+  ]
+}

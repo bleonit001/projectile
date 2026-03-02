@@ -1,0 +1,150 @@
+{
+  "run_id": "14f707a3-b7e",
+  "invoice_number": "INV-002",
+  "vendor_name": "Beta Industries",
+  "total_amount": 3776.0,
+  "currency": "USD",
+  "decision": "approve_and_post",
+  "reason": "Minor warnings present (2) but amount $3,776.00 is within auto-approval range.",
+  "all_findings": [
+    {
+      "finding_id": "623d1479",
+      "agent": "agent_e_matching",
+      "category": "missing_grn",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "No GRN for 3-way matching",
+      "description": "GRN required for goods invoices but none found",
+      "evidence": [],
+      "recommendation": "Obtain goods receipt confirmation before payment",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "27edacd0",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "critical_findings": [],
+  "risk_score": 1.0,
+  "confidence": 1.0,
+  "approval_packet": {
+    "invoice_number": "INV-002",
+    "vendor_name": "Beta Industries",
+    "total_amount": 3776.0,
+    "currency": "USD",
+    "exceptions": [
+      {
+        "finding_id": "623d1479",
+        "agent": "agent_e_matching",
+        "category": "missing_grn",
+        "severity": "warning",
+        "confidence": 1.0,
+        "title": "No GRN for 3-way matching",
+        "description": "GRN required for goods invoices but none found",
+        "evidence": [],
+        "recommendation": "Obtain goods receipt confirmation before payment",
+        "open_questions": [],
+        "data": {}
+      },
+      {
+        "finding_id": "27edacd0",
+        "agent": "agent_f_compliance",
+        "category": "compliance",
+        "severity": "warning",
+        "confidence": 1.0,
+        "title": "Missing vendor tax/VAT ID",
+        "description": "Vendor tax ID is required but not present on invoice",
+        "evidence": [],
+        "recommendation": "Request vendor tax ID before processing",
+        "open_questions": [],
+        "data": {}
+      }
+    ],
+    "approval_required": false,
+    "approver_role": "auto",
+    "approver_reason": "Requires review: 2 warning(s)",
+    "priority": "normal",
+    "recommended_action": "approve_and_post",
+    "follow_up_actions": [
+      "Obtain goods receipt confirmation before payment",
+      "Request vendor tax ID before processing"
+    ],
+    "evidence_summary": []
+  },
+  "posting_payload": {
+    "document_type": "invoice",
+    "invoice_number": "INV-002",
+    "vendor_id": "V002",
+    "posting_date": "2026-02-26",
+    "invoice_date": "2025-02-01",
+    "due_date": "2025-03-03",
+    "currency": "USD",
+    "total_amount": 3776.0,
+    "tax_amount": 576.0,
+    "po_number": "PO-1002",
+    "payment_terms": null,
+    "line_items": [
+      {
+        "gl_account": "",
+        "cost_center": "",
+        "description": "Industrial Bearings",
+        "amount": 2400.0,
+        "tax_code": "",
+        "po_line_ref": "1"
+      },
+      {
+        "gl_account": "",
+        "cost_center": "",
+        "description": "Lubricant Drums",
+        "amount": 800.0,
+        "tax_code": "",
+        "po_line_ref": "2"
+      }
+    ],
+    "status": "ready",
+    "decision": "auto_post"
+  },
+  "audit_trail": [
+    "[agent_a_intake] Starting intake from bundle: /Users/bleonitshillova/claudetestcapstone/tests/bundles/no_grn",
+    "[agent_a_intake] Loaded manifest.yaml",
+    "[agent_a_intake] Discovered 3 documents",
+    "[agent_a_intake] RISK: No GRN found in bundle",
+    "[agent_a_intake] Context packet saved",
+    "[agent_b_extraction] Starting extraction",
+    "[agent_b_extraction] Extracting from: invoice.json",
+    "[agent_b_extraction] Parsing structured JSON invoice",
+    "[agent_b_extraction] Extracted 2 line items",
+    "[agent_c_vendor] Starting vendor resolution",
+    "[agent_c_vendor] Loaded 1 vendor records",
+    "[agent_c_vendor] Vendor resolved: Beta Industries (score: 100.0)",
+    "[agent_d_validation] Starting validation and normalization",
+    "[agent_d_validation] Validation complete \u2013 0 findings",
+    "[agent_e_matching] Starting matching engine",
+    "[agent_e_matching] Loaded 1 POs and 0 GRNs",
+    "[agent_e_matching] Performing 2-way match with PO PO-1002",
+    "[agent_e_matching] Finding [warning]: No GRN for 3-way matching",
+    "[agent_e_matching] Matching complete: matched",
+    "[agent_f_compliance] Starting compliance validation",
+    "[agent_f_compliance] Finding [warning]: Missing vendor tax/VAT ID",
+    "[agent_f_compliance] Compliance check complete \u2013 1 findings",
+    "[agent_g_anomaly] Starting anomaly detection",
+    "[agent_g_anomaly] Anomaly detection complete \u2013 0 findings",
+    "[agent_h_exception] Starting exception triage",
+    "[agent_h_exception] Triaging: 0 critical, 0 errors, 2 warnings, 0 info",
+    "[agent_h_exception] Exception triage complete \u2013 action: approve_and_post",
+    "[orchestrator] Final decision: approve_and_post",
+    "[orchestrator] Reason: Minor warnings present (2) but amount $3,776.00 is within auto-approval range.",
+    "[orchestrator] Risk score: 1.00",
+    "[orchestrator] Findings: 2 (C:0 E:0 W:2)"
+  ]
+}

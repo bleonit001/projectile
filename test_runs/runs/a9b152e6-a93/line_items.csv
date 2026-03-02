@@ -1,0 +1,3 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Widget Type A - Returned defective units,-10.0,EA,25.0,-250.0,,,,0.5
+2,Widget Type B - Pricing adjustment,-5.0,EA,30.0,-150.0,,,,0.5

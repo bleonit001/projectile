@@ -1,0 +1,3 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Industrial Bearings,200.0,EA,12.0,2400.0,,,,0.5
+2,Lubricant Drums,10.0,DRUM,80.0,800.0,,,,0.5

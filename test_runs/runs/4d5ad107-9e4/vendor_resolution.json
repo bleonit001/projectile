@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V009",
+    "vendor_name": "Theta Supplies",
+    "tax_id": "US99-1231234",
+    "address": null,
+    "bank_account": "BANK-009-THETA",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

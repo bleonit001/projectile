@@ -1,0 +1,21 @@
+{
+  "run_id": "f1d102d1-8d9",
+  "start_time": "2026-02-26T23:58:17.798694",
+  "end_time": "2026-02-26T23:58:17.809203",
+  "duration_seconds": 0.01,
+  "documents_processed": 5,
+  "line_items_extracted": 1,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 1,
+  "findings_by_severity": {
+    "warning": 1
+  },
+  "findings_by_category": {
+    "compliance": 1
+  },
+  "match_status": "matched",
+  "decision": "approve_and_post",
+  "exceptions_count": 0,
+  "auto_posted": false
+}

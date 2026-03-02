@@ -1,0 +1,27 @@
+{
+  "run_id": "e0fa04ad-d39",
+  "timestamp": "2026-02-26T23:58:17.788385",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_po_invoice",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_po_invoice/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/no_po_invoice/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Lambda Consulting"
+  ],
+  "po_references": [],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [],
+  "metadata": {
+    "scenario": "Invoice with no purchase order - non-PO invoice requiring special approval"
+  }
+}

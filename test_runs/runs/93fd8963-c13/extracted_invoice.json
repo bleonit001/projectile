@@ -1,0 +1,51 @@
+{
+  "invoice_number": "INV-006",
+  "invoice_date": "2025-03-01",
+  "due_date": "2025-03-31",
+  "vendor_name": "Zeta Manufacturing",
+  "vendor_id": "V006",
+  "vendor_address": null,
+  "vendor_tax_id": null,
+  "vendor_bank_account": null,
+  "buyer_name": null,
+  "buyer_address": null,
+  "buyer_tax_id": null,
+  "po_number": "PO-1006",
+  "currency": "USD",
+  "subtotal": 7500.0,
+  "tax_amount": 1350.0,
+  "total_amount": 8850.0,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Aluminum Sheets 2mm",
+      "quantity": 500.0,
+      "unit": "EA",
+      "unit_price": 15.0,
+      "amount": 7500.0,
+      "tax_rate": null,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    }
+  ],
+  "payment_terms": null,
+  "notes": null,
+  "confidence_scores": {
+    "invoice_number": 1.0,
+    "invoice_date": 1.0,
+    "vendor_name": 1.0,
+    "total_amount": 1.0,
+    "po_number": 1.0,
+    "line_items": 1.0
+  },
+  "evidence": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/invoice.json",
+      "page": null,
+      "field": "full_document",
+      "bbox": null,
+      "text_snippet": null
+    }
+  ]
+}

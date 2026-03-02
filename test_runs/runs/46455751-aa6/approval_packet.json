@@ -1,0 +1,65 @@
+{
+  "invoice_number": "INV-005",
+  "vendor_name": "Epsilon Services",
+  "total_amount": 6490.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "929f101f",
+      "agent": "agent_d_validation",
+      "category": "total_mismatch",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Subtotal does not match line items",
+      "description": "Header subtotal (5500.0) does not equal sum of line items (5000.0). Difference: 500.0",
+      "evidence": [],
+      "recommendation": "Verify line item amounts and subtotal",
+      "open_questions": [],
+      "data": {
+        "header_subtotal": 5500.0,
+        "computed_subtotal": 5000.0,
+        "difference": 500.0
+      }
+    },
+    {
+      "finding_id": "6a7d15f3",
+      "agent": "agent_e_matching",
+      "category": "missing_po",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "No purchase order for matching",
+      "description": "Invoice has no associated PO and policy requires PO matching",
+      "evidence": [],
+      "recommendation": "Route for non-PO invoice approval",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "15dc1ee7",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 2 error(s), 1 warning(s)",
+  "priority": "high",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Verify line item amounts and subtotal",
+    "Route for non-PO invoice approval",
+    "Request vendor tax ID before processing"
+  ],
+  "evidence_summary": [
+    "[ERROR] Subtotal does not match line items",
+    "[ERROR] No purchase order for matching"
+  ]
+}

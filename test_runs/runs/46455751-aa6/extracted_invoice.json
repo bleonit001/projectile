@@ -1,0 +1,63 @@
+{
+  "invoice_number": "INV-005",
+  "invoice_date": "2025-02-20",
+  "due_date": "2025-03-22",
+  "vendor_name": "Epsilon Services",
+  "vendor_id": "V005",
+  "vendor_address": null,
+  "vendor_tax_id": null,
+  "vendor_bank_account": null,
+  "buyer_name": null,
+  "buyer_address": null,
+  "buyer_tax_id": null,
+  "po_number": "PO-1005",
+  "currency": "USD",
+  "subtotal": 5500.0,
+  "tax_amount": 990.0,
+  "total_amount": 6490.0,
+  "line_items": [
+    {
+      "line_number": 1,
+      "description": "Consulting Services - Phase 1",
+      "quantity": 40.0,
+      "unit": "HR",
+      "unit_price": 75.0,
+      "amount": 3000.0,
+      "tax_rate": null,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    },
+    {
+      "line_number": 2,
+      "description": "Consulting Services - Phase 2",
+      "quantity": 20.0,
+      "unit": "HR",
+      "unit_price": 100.0,
+      "amount": 2000.0,
+      "tax_rate": null,
+      "tax_amount": null,
+      "po_line_ref": null,
+      "confidence": 0.5
+    }
+  ],
+  "payment_terms": null,
+  "notes": null,
+  "confidence_scores": {
+    "invoice_number": 1.0,
+    "invoice_date": 1.0,
+    "vendor_name": 1.0,
+    "total_amount": 1.0,
+    "po_number": 1.0,
+    "line_items": 1.0
+  },
+  "evidence": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/header_mismatch/invoice.json",
+      "page": null,
+      "field": "full_document",
+      "bbox": null,
+      "text_snippet": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "invoice_number": "INV-002",
+  "vendor_name": "Beta Industries",
+  "total_amount": 3776.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "66e93c69",
+      "agent": "agent_e_matching",
+      "category": "missing_grn",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "No GRN for 3-way matching",
+      "description": "GRN required for goods invoices but none found",
+      "evidence": [],
+      "recommendation": "Obtain goods receipt confirmation before payment",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "920d9960",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": false,
+  "approver_role": "auto",
+  "approver_reason": "Requires review: 2 warning(s)",
+  "priority": "normal",
+  "recommended_action": "approve_and_post",
+  "follow_up_actions": [
+    "Obtain goods receipt confirmation before payment",
+    "Request vendor tax ID before processing"
+  ],
+  "evidence_summary": []
+}

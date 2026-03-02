@@ -1,0 +1,14 @@
+{
+  "invoice_number": "INV-001",
+  "vendor_name": "Acme Corp",
+  "total_amount": 5310.0,
+  "currency": "USD",
+  "exceptions": [],
+  "approval_required": false,
+  "approver_role": "manager",
+  "approver_reason": "No exceptions \u2013 auto-approval eligible",
+  "priority": "normal",
+  "recommended_action": "auto_post",
+  "follow_up_actions": [],
+  "evidence_summary": []
+}

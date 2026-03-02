@@ -1,0 +1,111 @@
+{
+  "match_type": "3-way",
+  "overall_status": "mismatched",
+  "invoice_number": "INV-003",
+  "po_number": "PO-1003",
+  "grn_numbers": [
+    "GRN-2003"
+  ],
+  "line_matches": [
+    {
+      "invoice_line": 1,
+      "po_line": 1,
+      "grn_line": 1,
+      "quantity_match": false,
+      "price_match": true,
+      "quantity_variance_pct": 10.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 110.0,
+      "quantity_po": 100.0,
+      "quantity_grn": 100.0,
+      "price_invoice": 45.0,
+      "price_po": 45.0,
+      "status": "mismatched",
+      "notes": [
+        "Qty variance: 10.0%",
+        "GRN qty mismatch: invoice=110.0, received=100.0"
+      ]
+    },
+    {
+      "invoice_line": 2,
+      "po_line": 2,
+      "grn_line": 2,
+      "quantity_match": false,
+      "price_match": true,
+      "quantity_variance_pct": 10.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 55.0,
+      "quantity_po": 50.0,
+      "quantity_grn": 50.0,
+      "price_invoice": 80.0,
+      "price_po": 80.0,
+      "status": "mismatched",
+      "notes": [
+        "Qty variance: 10.0%",
+        "GRN qty mismatch: invoice=55.0, received=50.0"
+      ]
+    }
+  ],
+  "total_invoice": 11033.0,
+  "total_po": 8500.0,
+  "total_variance": 850.0,
+  "total_variance_pct": 10.0,
+  "within_tolerance": false,
+  "findings": [
+    {
+      "finding_id": "93111fce",
+      "agent": "agent_e_matching",
+      "category": "quantity_variance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Line 1: quantity variance 10.0%",
+      "description": "Invoice qty (110.0) vs PO qty (100.0): 10.0% variance (tolerance: \u00b15.0%)",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "line": 1,
+        "invoice_qty": 110.0,
+        "po_qty": 100.0,
+        "variance_pct": 10.0
+      }
+    },
+    {
+      "finding_id": "53aa3fd7",
+      "agent": "agent_e_matching",
+      "category": "quantity_variance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Line 2: quantity variance 10.0%",
+      "description": "Invoice qty (55.0) vs PO qty (50.0): 10.0% variance (tolerance: \u00b15.0%)",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "line": 2,
+        "invoice_qty": 55.0,
+        "po_qty": 50.0,
+        "variance_pct": 10.0
+      }
+    },
+    {
+      "finding_id": "b1946027",
+      "agent": "agent_e_matching",
+      "category": "price_variance",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Total amount variance exceeds tolerance",
+      "description": "Invoice total (11033.0) vs PO total (8500.0): variance 850.0 (10.0%)",
+      "evidence": [],
+      "recommendation": "Review pricing and approve variance",
+      "open_questions": [],
+      "data": {
+        "invoice_total": 11033.0,
+        "po_total": 8500.0,
+        "variance": 850.0,
+        "variance_pct": 10.0
+      }
+    }
+  ],
+  "summary": "3-way matching: 0/2 lines matched. Overall: mismatched"
+}

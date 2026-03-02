@@ -1,0 +1,156 @@
+{
+  "run_id": "46455751-aa6",
+  "invoice_number": "INV-005",
+  "vendor_name": "Epsilon Services",
+  "total_amount": 6490.0,
+  "currency": "USD",
+  "decision": "route_for_approval",
+  "reason": "2 error(s) require review. Routing to approver for resolution.",
+  "all_findings": [
+    {
+      "finding_id": "929f101f",
+      "agent": "agent_d_validation",
+      "category": "total_mismatch",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "Subtotal does not match line items",
+      "description": "Header subtotal (5500.0) does not equal sum of line items (5000.0). Difference: 500.0",
+      "evidence": [],
+      "recommendation": "Verify line item amounts and subtotal",
+      "open_questions": [],
+      "data": {
+        "header_subtotal": 5500.0,
+        "computed_subtotal": 5000.0,
+        "difference": 500.0
+      }
+    },
+    {
+      "finding_id": "6a7d15f3",
+      "agent": "agent_e_matching",
+      "category": "missing_po",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "No purchase order for matching",
+      "description": "Invoice has no associated PO and policy requires PO matching",
+      "evidence": [],
+      "recommendation": "Route for non-PO invoice approval",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "15dc1ee7",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "critical_findings": [],
+  "risk_score": 4.5,
+  "confidence": 0.8,
+  "approval_packet": {
+    "invoice_number": "INV-005",
+    "vendor_name": "Epsilon Services",
+    "total_amount": 6490.0,
+    "currency": "USD",
+    "exceptions": [
+      {
+        "finding_id": "929f101f",
+        "agent": "agent_d_validation",
+        "category": "total_mismatch",
+        "severity": "error",
+        "confidence": 1.0,
+        "title": "Subtotal does not match line items",
+        "description": "Header subtotal (5500.0) does not equal sum of line items (5000.0). Difference: 500.0",
+        "evidence": [],
+        "recommendation": "Verify line item amounts and subtotal",
+        "open_questions": [],
+        "data": {
+          "header_subtotal": 5500.0,
+          "computed_subtotal": 5000.0,
+          "difference": 500.0
+        }
+      },
+      {
+        "finding_id": "6a7d15f3",
+        "agent": "agent_e_matching",
+        "category": "missing_po",
+        "severity": "error",
+        "confidence": 1.0,
+        "title": "No purchase order for matching",
+        "description": "Invoice has no associated PO and policy requires PO matching",
+        "evidence": [],
+        "recommendation": "Route for non-PO invoice approval",
+        "open_questions": [],
+        "data": {}
+      },
+      {
+        "finding_id": "15dc1ee7",
+        "agent": "agent_f_compliance",
+        "category": "compliance",
+        "severity": "warning",
+        "confidence": 1.0,
+        "title": "Missing vendor tax/VAT ID",
+        "description": "Vendor tax ID is required but not present on invoice",
+        "evidence": [],
+        "recommendation": "Request vendor tax ID before processing",
+        "open_questions": [],
+        "data": {}
+      }
+    ],
+    "approval_required": true,
+    "approver_role": "manager",
+    "approver_reason": "Requires review: 2 error(s), 1 warning(s)",
+    "priority": "high",
+    "recommended_action": "route_for_approval",
+    "follow_up_actions": [
+      "Verify line item amounts and subtotal",
+      "Route for non-PO invoice approval",
+      "Request vendor tax ID before processing"
+    ],
+    "evidence_summary": [
+      "[ERROR] Subtotal does not match line items",
+      "[ERROR] No purchase order for matching"
+    ]
+  },
+  "posting_payload": null,
+  "audit_trail": [
+    "[agent_a_intake] Starting intake from bundle: /Users/bleonitshillova/claudetestcapstone/tests/bundles/header_mismatch",
+    "[agent_a_intake] Loaded manifest.yaml",
+    "[agent_a_intake] Discovered 2 documents",
+    "[agent_a_intake] RISK: No GRN found in bundle",
+    "[agent_a_intake] Context packet saved",
+    "[agent_b_extraction] Starting extraction",
+    "[agent_b_extraction] Extracting from: invoice.json",
+    "[agent_b_extraction] Parsing structured JSON invoice",
+    "[agent_b_extraction] Extracted 2 line items",
+    "[agent_c_vendor] Starting vendor resolution",
+    "[agent_c_vendor] Loaded 1 vendor records",
+    "[agent_c_vendor] Vendor resolved: Epsilon Services (score: 100.0)",
+    "[agent_d_validation] Starting validation and normalization",
+    "[agent_d_validation] Finding [error]: Subtotal does not match line items",
+    "[agent_d_validation] Validation complete \u2013 1 findings",
+    "[agent_e_matching] Starting matching engine",
+    "[agent_e_matching] Loaded 0 POs and 0 GRNs",
+    "[agent_e_matching] No PO data \u2013 no match possible",
+    "[agent_e_matching] Finding [error]: No purchase order for matching",
+    "[agent_f_compliance] Starting compliance validation",
+    "[agent_f_compliance] Finding [warning]: Missing vendor tax/VAT ID",
+    "[agent_f_compliance] Compliance check complete \u2013 1 findings",
+    "[agent_g_anomaly] Starting anomaly detection",
+    "[agent_g_anomaly] Anomaly detection complete \u2013 0 findings",
+    "[agent_h_exception] Starting exception triage",
+    "[agent_h_exception] Triaging: 0 critical, 2 errors, 1 warnings, 0 info",
+    "[agent_h_exception] Exception triage complete \u2013 action: route_for_approval",
+    "[orchestrator] Final decision: route_for_approval",
+    "[orchestrator] Reason: 2 error(s) require review. Routing to approver for resolution.",
+    "[orchestrator] Risk score: 4.50",
+    "[orchestrator] Findings: 3 (C:0 E:2 W:1)"
+  ]
+}

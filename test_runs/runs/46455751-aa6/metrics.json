@@ -1,0 +1,24 @@
+{
+  "run_id": "46455751-aa6",
+  "start_time": "2026-02-26T23:58:17.730890",
+  "end_time": "2026-02-26T23:58:17.733910",
+  "duration_seconds": 0.0,
+  "documents_processed": 2,
+  "line_items_extracted": 2,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 3,
+  "findings_by_severity": {
+    "error": 2,
+    "warning": 1
+  },
+  "findings_by_category": {
+    "total_mismatch": 1,
+    "missing_po": 1,
+    "compliance": 1
+  },
+  "match_status": "unmatched",
+  "decision": "route_for_approval",
+  "exceptions_count": 2,
+  "auto_posted": false
+}

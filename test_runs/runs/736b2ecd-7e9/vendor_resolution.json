@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V004",
+    "vendor_name": "Delta Co",
+    "tax_id": "US44-5556666",
+    "address": null,
+    "bank_account": "BANK-004-DELTA",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

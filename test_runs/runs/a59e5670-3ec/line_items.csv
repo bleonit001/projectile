@@ -1,0 +1,3 @@
+line_number,description,quantity,unit,unit_price,amount,tax_rate,tax_amount,po_line_ref,confidence
+1,Steel Rods 10mm,110.0,EA,45.0,4950.0,,,,0.5
+2,Steel Plates 5mm,55.0,EA,80.0,4400.0,,,,0.5

@@ -1,0 +1,103 @@
+{
+  "invoice_number": "INV-008",
+  "vendor_name": "Sakura Electronics",
+  "total_amount": 1980000.0,
+  "currency": "JPY",
+  "exceptions": [
+    {
+      "finding_id": "e6e15d45",
+      "agent": "agent_d_validation",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Currency 'JPY' not in allowed list",
+      "description": "Invoice currency JPY is not in allowed currencies: ['USD', 'EUR', 'GBP', 'CHF']",
+      "evidence": [],
+      "recommendation": "Verify currency and check FX handling",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "9d15cb1e",
+      "agent": "agent_e_matching",
+      "category": "missing_grn",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "No GRN for 3-way matching",
+      "description": "GRN required for goods invoices but none found",
+      "evidence": [],
+      "recommendation": "Obtain goods receipt confirmation before payment",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "25192f56",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "5de38c6c",
+      "agent": "agent_f_compliance",
+      "category": "tax_mismatch",
+      "severity": "warning",
+      "confidence": 0.9,
+      "title": "Overall effective tax rate mismatch",
+      "description": "Effective tax rate 10.0% differs from expected 18.0%",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "effective_rate": 10.0,
+        "expected_rate": 18.0
+      }
+    },
+    {
+      "finding_id": "409b101e",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Non-standard currency: JPY",
+      "description": "Currency 'JPY' is not in allowed list: ['USD', 'EUR', 'GBP', 'CHF']",
+      "evidence": [],
+      "recommendation": "Verify currency handling and FX conversion",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "097c5934",
+      "agent": "agent_g_anomaly",
+      "category": "anomaly",
+      "severity": "info",
+      "confidence": 0.5,
+      "title": "Suspiciously round amount",
+      "description": "Invoice amount 1980000.0 is a round number \u2013 may warrant review",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "amount": 1980000.0
+      }
+    }
+  ],
+  "approval_required": false,
+  "approver_role": "director",
+  "approver_reason": "Requires review: 5 warning(s)",
+  "priority": "normal",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Verify currency and check FX handling",
+    "Obtain goods receipt confirmation before payment",
+    "Request vendor tax ID before processing",
+    "Verify currency handling and FX conversion"
+  ],
+  "evidence_summary": []
+}

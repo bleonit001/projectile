@@ -1,0 +1,49 @@
+{
+  "run_id": "ffdc473a-101",
+  "timestamp": "2026-02-26T23:58:17.770102",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/bank_change_anomaly",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/bank_change_anomaly/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/bank_change_anomaly/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/bank_change_anomaly/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Acme Corp"
+  ],
+  "po_references": [
+    "PO-1011"
+  ],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/bank_change_anomaly/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1011"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/bank_change_anomaly/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1011"
+    }
+  ],
+  "metadata": {
+    "scenario": "Bank account change anomaly - vendor bank differs from master data, high value invoice"
+  }
+}

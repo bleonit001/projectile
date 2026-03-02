@@ -1,0 +1,54 @@
+{
+  "run_id": "93fd8963-c13",
+  "timestamp": "2026-02-26T23:58:17.738209",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/invoice_history.json",
+      "document_type": "unknown",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Zeta Manufacturing"
+  ],
+  "po_references": [
+    "PO-1006"
+  ],
+  "grn_references": [],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1006"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/duplicate_invoice/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1006"
+    }
+  ],
+  "metadata": {
+    "scenario": "Duplicate invoice - same invoice number, vendor, and amount already exists in history"
+  }
+}

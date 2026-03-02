@@ -1,0 +1,35 @@
+{
+  "match_type": "3-way",
+  "overall_status": "matched",
+  "invoice_number": "INV-014",
+  "po_number": "PO-1014",
+  "grn_numbers": [
+    "GRN-3001",
+    "GRN-3002"
+  ],
+  "line_matches": [
+    {
+      "invoice_line": 1,
+      "po_line": 1,
+      "grn_line": 1,
+      "quantity_match": true,
+      "price_match": true,
+      "quantity_variance_pct": 0.0,
+      "price_variance_pct": 0.0,
+      "quantity_invoice": 100.0,
+      "quantity_po": 100.0,
+      "quantity_grn": 100.0,
+      "price_invoice": 85.0,
+      "price_po": 85.0,
+      "status": "matched",
+      "notes": []
+    }
+  ],
+  "total_invoice": 10030.0,
+  "total_po": 8500.0,
+  "total_variance": 0.0,
+  "total_variance_pct": 0.0,
+  "within_tolerance": true,
+  "findings": [],
+  "summary": "3-way matching: 1/1 lines matched. Overall: matched"
+}

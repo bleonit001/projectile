@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V008",
+    "vendor_name": "Sakura Electronics",
+    "tax_id": "JP-1234567890",
+    "address": null,
+    "bank_account": "BANK-008-SAKURA",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

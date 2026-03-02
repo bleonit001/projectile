@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V001",
+    "vendor_name": "Acme Corp",
+    "tax_id": "US12-3456789",
+    "address": null,
+    "bank_account": "BANK-001-ACME",
+    "bank_account_last_changed": "2025-01-10",
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 1
+}

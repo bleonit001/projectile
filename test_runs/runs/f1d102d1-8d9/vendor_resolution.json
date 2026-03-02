@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V014",
+    "vendor_name": "Mu Logistics",
+    "tax_id": "US14-6667777",
+    "address": null,
+    "bank_account": "BANK-014-MU",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

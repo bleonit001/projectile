@@ -1,0 +1,14 @@
+{
+  "resolved": {
+    "vendor_id": "V002",
+    "vendor_name": "Beta Industries",
+    "tax_id": "US98-7654321",
+    "address": null,
+    "bank_account": "BANK-002-BETA",
+    "bank_account_last_changed": null,
+    "payment_terms": null,
+    "status": "active"
+  },
+  "match_score": 100.0,
+  "findings_count": 0
+}

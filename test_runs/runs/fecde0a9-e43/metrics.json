@@ -1,0 +1,24 @@
+{
+  "run_id": "fecde0a9-e43",
+  "start_time": "2026-02-26T23:58:17.719958",
+  "end_time": "2026-02-26T23:58:17.722929",
+  "duration_seconds": 0.0,
+  "documents_processed": 4,
+  "line_items_extracted": 2,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 4,
+  "findings_by_severity": {
+    "error": 1,
+    "warning": 3
+  },
+  "findings_by_category": {
+    "price_variance": 1,
+    "quantity_variance": 2,
+    "compliance": 1
+  },
+  "match_status": "mismatched",
+  "decision": "route_for_approval",
+  "exceptions_count": 1,
+  "auto_posted": false
+}

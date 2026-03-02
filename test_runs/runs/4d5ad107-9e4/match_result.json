@@ -1,0 +1,29 @@
+{
+  "match_type": "no_match",
+  "overall_status": "unmatched",
+  "invoice_number": "INV-009",
+  "po_number": null,
+  "grn_numbers": [],
+  "line_matches": [],
+  "total_invoice": null,
+  "total_po": null,
+  "total_variance": null,
+  "total_variance_pct": null,
+  "within_tolerance": false,
+  "findings": [
+    {
+      "finding_id": "55cafd5d",
+      "agent": "agent_e_matching",
+      "category": "missing_po",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "No purchase order for matching",
+      "description": "Invoice has no associated PO and policy requires PO matching",
+      "evidence": [],
+      "recommendation": "Route for non-PO invoice approval",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "summary": "No PO data available for matching"
+}

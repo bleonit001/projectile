@@ -1,0 +1,63 @@
+{
+  "run_id": "e7cd25e2-cc0",
+  "timestamp": "2026-02-26T23:58:17.813518",
+  "bundle_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice",
+  "documents": [
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/invoice.json",
+      "document_type": "invoice",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/purchase_order.json",
+      "document_type": "purchase_order",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/grn.json",
+      "document_type": "goods_receipt_note",
+      "metadata": {}
+    },
+    {
+      "file_path": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/vendor_master.json",
+      "document_type": "vendor_master",
+      "metadata": {}
+    }
+  ],
+  "vendor_candidates": [
+    "Nu Office Supplies"
+  ],
+  "po_references": [
+    "PO-1015"
+  ],
+  "grn_references": [
+    "GRN-2015"
+  ],
+  "risk_indicators": [],
+  "evidence_index": [
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/invoice.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1015"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/purchase_order.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1015"
+    },
+    {
+      "source_file": "/Users/bleonitshillova/claudetestcapstone/tests/bundles/clean_small_invoice/grn.json",
+      "page": null,
+      "field": "po_number",
+      "bbox": null,
+      "text_snippet": "PO-1015"
+    }
+  ],
+  "metadata": {
+    "scenario": "Clean small invoice under $5000 auto-approve threshold with PO match"
+  }
+}

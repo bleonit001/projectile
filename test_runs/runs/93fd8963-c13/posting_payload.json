@@ -1,0 +1,25 @@
+{
+  "document_type": "invoice",
+  "invoice_number": "INV-006",
+  "vendor_id": "V006",
+  "posting_date": "2026-02-26",
+  "invoice_date": "2025-03-01",
+  "due_date": "2025-03-31",
+  "currency": "USD",
+  "total_amount": 8850.0,
+  "tax_amount": 1350.0,
+  "po_number": "PO-1006",
+  "payment_terms": null,
+  "line_items": [
+    {
+      "gl_account": "",
+      "cost_center": "",
+      "description": "Aluminum Sheets 2mm",
+      "amount": 7500.0,
+      "tax_code": "",
+      "po_line_ref": "1"
+    }
+  ],
+  "status": "ready",
+  "decision": "auto_post"
+}

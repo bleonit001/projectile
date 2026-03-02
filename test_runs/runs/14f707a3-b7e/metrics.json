@@ -1,0 +1,22 @@
+{
+  "run_id": "14f707a3-b7e",
+  "start_time": "2026-02-26T23:58:17.702654",
+  "end_time": "2026-02-26T23:58:17.706233",
+  "duration_seconds": 0.0,
+  "documents_processed": 3,
+  "line_items_extracted": 2,
+  "extraction_confidence_avg": 1.0,
+  "extraction_confidence_min": 1.0,
+  "findings_total": 2,
+  "findings_by_severity": {
+    "warning": 2
+  },
+  "findings_by_category": {
+    "missing_grn": 1,
+    "compliance": 1
+  },
+  "match_status": "matched",
+  "decision": "approve_and_post",
+  "exceptions_count": 0,
+  "auto_posted": false
+}

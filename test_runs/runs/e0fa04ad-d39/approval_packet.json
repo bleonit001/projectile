@@ -1,0 +1,75 @@
+{
+  "invoice_number": "INV-013",
+  "vendor_name": "Lambda Consulting",
+  "total_amount": 7500.0,
+  "currency": "USD",
+  "exceptions": [
+    {
+      "finding_id": "773a7e90",
+      "agent": "agent_e_matching",
+      "category": "missing_po",
+      "severity": "error",
+      "confidence": 1.0,
+      "title": "No purchase order for matching",
+      "description": "Invoice has no associated PO and policy requires PO matching",
+      "evidence": [],
+      "recommendation": "Route for non-PO invoice approval",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "6bf5316e",
+      "agent": "agent_f_compliance",
+      "category": "compliance",
+      "severity": "warning",
+      "confidence": 1.0,
+      "title": "Missing vendor tax/VAT ID",
+      "description": "Vendor tax ID is required but not present on invoice",
+      "evidence": [],
+      "recommendation": "Request vendor tax ID before processing",
+      "open_questions": [],
+      "data": {}
+    },
+    {
+      "finding_id": "57f39ab9",
+      "agent": "agent_g_anomaly",
+      "category": "anomaly",
+      "severity": "info",
+      "confidence": 0.5,
+      "title": "Suspiciously round amount",
+      "description": "Invoice amount 7500.0 is a round number \u2013 may warrant review",
+      "evidence": [],
+      "recommendation": null,
+      "open_questions": [],
+      "data": {
+        "amount": 7500.0
+      }
+    },
+    {
+      "finding_id": "bbb8f68f",
+      "agent": "agent_g_anomaly",
+      "category": "anomaly",
+      "severity": "warning",
+      "confidence": 0.8,
+      "title": "High-value invoice without PO",
+      "description": "Invoice for $7,500.00 has no PO reference \u2013 above auto-approve threshold of $5,000.00",
+      "evidence": [],
+      "recommendation": "Require PO or manager approval for high-value non-PO invoices",
+      "open_questions": [],
+      "data": {}
+    }
+  ],
+  "approval_required": true,
+  "approver_role": "manager",
+  "approver_reason": "Requires review: 1 error(s), 2 warning(s)",
+  "priority": "high",
+  "recommended_action": "route_for_approval",
+  "follow_up_actions": [
+    "Route for non-PO invoice approval",
+    "Request vendor tax ID before processing",
+    "Require PO or manager approval for high-value non-PO invoices"
+  ],
+  "evidence_summary": [
+    "[ERROR] No purchase order for matching"
+  ]
+}
