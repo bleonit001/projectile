@@ -27,6 +27,48 @@ from src.utils.file_utils import load_json, save_csv, save_json
 class ExtractionAgent(BaseAgent):
     name = "agent_b_extraction"
 
+    # ------------------------------------------------------------------
+    # Bounding-box helpers
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _find_bbox_for_text(
+        word_boxes: list[dict], search_text: str
+    ) -> list[float] | None:
+        """Search word_boxes for *search_text* and return a merged bbox.
+
+        word_boxes items: {"text": str, "bbox": [x0, y0, x1, y1], "page": int}
+        Returns [x0, y0, x1, y1] covering all matched words, or None.
+        """
+        if not word_boxes or not search_text:
+            return None
+
+        search_lower = search_text.lower().strip()
+        # First try: exact single-word match
+        for wb in word_boxes:
+            if wb["text"].lower().strip() == search_lower:
+                return wb["bbox"]
+
+        # Second try: multi-word – build a sliding window over consecutive words
+        search_tokens = search_lower.split()
+        if len(search_tokens) < 2:
+            # partial match fallback
+            for wb in word_boxes:
+                if search_lower in wb["text"].lower():
+                    return wb["bbox"]
+            return None
+
+        for i in range(len(word_boxes) - len(search_tokens) + 1):
+            window = word_boxes[i : i + len(search_tokens)]
+            window_text = " ".join(w["text"].lower().strip() for w in window)
+            if search_lower in window_text:
+                x0 = min(w["bbox"][0] for w in window)
+                y0 = min(w["bbox"][1] for w in window)
+                x1 = max(w["bbox"][2] for w in window)
+                y1 = max(w["bbox"][3] for w in window)
+                return [x0, y0, x1, y1]
+
+        return None
+
     def run(self, context: dict[str, Any]) -> dict[str, Any]:
         packet = context["context_packet"]
         self.log("Starting extraction")
@@ -137,22 +179,43 @@ class ExtractionAgent(BaseAgent):
 
         invoice = ExtractedInvoice()
         all_text = ""
+        word_boxes: list[dict] = []
 
         with pdfplumber.open(fpath) as pdf:
             for page_num, page in enumerate(pdf.pages, 1):
                 text = page.extract_text() or ""
                 all_text += text + "\n"
 
+                # Collect word-level bounding boxes for evidence
+                for w in page.extract_words() or []:
+                    word_boxes.append({
+                        "text": w.get("text", ""),
+                        "bbox": [
+                            round(w.get("x0", 0), 2),
+                            round(w.get("top", 0), 2),
+                            round(w.get("x1", 0), 2),
+                            round(w.get("bottom", 0), 2),
+                        ],
+                        "page": page_num,
+                    })
+
                 # Try to extract tables for line items
                 tables = page.extract_tables()
-                for table in tables:
+                table_bboxes = [
+                    t.bbox for t in (page.find_tables() or [])
+                ]
+                for idx, table in enumerate(tables):
                     if table and len(table) > 1:
+                        t_bbox = table_bboxes[idx] if idx < len(table_bboxes) else None
                         invoice.line_items.extend(
-                            self._parse_table_to_line_items(table, fpath, page_num)
+                            self._parse_table_to_line_items(
+                                table, fpath, page_num, table_bbox=t_bbox,
+                            )
                         )
 
-        # Parse header fields from text
-        invoice = self._parse_text_fields(invoice, all_text, fpath)
+        # Parse header fields from text, with word-level bbox lookup
+        invoice = self._parse_text_fields(invoice, all_text, fpath, word_boxes=word_boxes)
+        self.log(f"Collected {len(word_boxes)} word bounding boxes from PDF")
         return invoice
 
     def _extract_from_image(self, fpath: Path) -> ExtractedInvoice:
@@ -168,9 +231,59 @@ class ExtractionAgent(BaseAgent):
             )
 
         img = Image.open(fpath)
-        text = pytesseract.image_to_string(img)
+
+        # Use image_to_data to get bounding boxes alongside text
+        try:
+            ocr_data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
+            word_boxes: list[dict] = []
+            text_parts: list[str] = []
+
+            for i, word_text in enumerate(ocr_data.get("text", [])):
+                word_text = str(word_text).strip()
+                if not word_text:
+                    # Preserve line breaks between blocks
+                    if text_parts and text_parts[-1] != "\n":
+                        text_parts.append("\n")
+                    continue
+                text_parts.append(word_text)
+                left = ocr_data["left"][i]
+                top = ocr_data["top"][i]
+                width = ocr_data["width"][i]
+                height = ocr_data["height"][i]
+                word_boxes.append({
+                    "text": word_text,
+                    "bbox": [
+                        round(float(left), 2),
+                        round(float(top), 2),
+                        round(float(left + width), 2),
+                        round(float(top + height), 2),
+                    ],
+                    "page": 1,
+                })
+
+            text = " ".join(t for t in text_parts if t != "\n")
+            # Re-insert newlines at the right positions
+            full_text_lines: list[str] = []
+            current_line: list[str] = []
+            for t in text_parts:
+                if t == "\n":
+                    if current_line:
+                        full_text_lines.append(" ".join(current_line))
+                        current_line = []
+                else:
+                    current_line.append(t)
+            if current_line:
+                full_text_lines.append(" ".join(current_line))
+            text = "\n".join(full_text_lines)
+
+            self.log(f"Collected {len(word_boxes)} word bounding boxes from OCR")
+        except Exception:
+            # Fallback to simple string extraction if image_to_data fails
+            text = pytesseract.image_to_string(img)
+            word_boxes = []
+
         invoice = ExtractedInvoice()
-        invoice = self._parse_text_fields(invoice, text, fpath)
+        invoice = self._parse_text_fields(invoice, text, fpath, word_boxes=word_boxes or None)
 
         # Lower confidence for OCR results
         for key in invoice.confidence_scores:
@@ -178,8 +291,18 @@ class ExtractionAgent(BaseAgent):
 
         return invoice
 
-    def _parse_text_fields(self, invoice: ExtractedInvoice, text: str, fpath: Path) -> ExtractedInvoice:
-        """Parse common invoice fields from raw text using regex heuristics."""
+    def _parse_text_fields(
+        self,
+        invoice: ExtractedInvoice,
+        text: str,
+        fpath: Path,
+        word_boxes: list[dict] | None = None,
+    ) -> ExtractedInvoice:
+        """Parse common invoice fields from raw text using regex heuristics.
+
+        If *word_boxes* is provided (from PDF or OCR), bounding-box coordinates
+        are attached to the EvidencePointer for each extracted field.
+        """
         confidence = {}
 
         # Invoice number
@@ -187,36 +310,67 @@ class ExtractionAgent(BaseAgent):
         if m:
             invoice.invoice_number = m.group(1).strip()
             confidence["invoice_number"] = 0.8
+            bbox = self._find_bbox_for_text(word_boxes or [], m.group(1).strip())
+            invoice.evidence.append(EvidencePointer(
+                source_file=str(fpath), field="invoice_number",
+                text_snippet=invoice.invoice_number, bbox=bbox,
+            ))
 
         # Invoice date
         m = re.search(r"(?:invoice\s*date|date)\s*[:.]?\s*(\d{1,2}[/\-]\d{1,2}[/\-]\d{2,4})", text, re.I)
         if m:
             invoice.invoice_date = m.group(1).strip()
             confidence["invoice_date"] = 0.8
+            bbox = self._find_bbox_for_text(word_boxes or [], m.group(1).strip())
+            invoice.evidence.append(EvidencePointer(
+                source_file=str(fpath), field="invoice_date",
+                text_snippet=invoice.invoice_date, bbox=bbox,
+            ))
 
         # PO Number
         m = re.search(r"(?:PO|purchase\s*order)\s*(?:#|no\.?|number)?\s*[:.]?\s*([A-Za-z0-9\-]+)", text, re.I)
         if m:
             invoice.po_number = m.group(1).strip()
             confidence["po_number"] = 0.8
+            bbox = self._find_bbox_for_text(word_boxes or [], m.group(1).strip())
+            invoice.evidence.append(EvidencePointer(
+                source_file=str(fpath), field="po_number",
+                text_snippet=invoice.po_number, bbox=bbox,
+            ))
 
         # Total amount
         m = re.search(r"(?:total|amount\s*due|balance\s*due)\s*[:.]?\s*\$?\s*([\d,]+\.?\d*)", text, re.I)
         if m:
             invoice.total_amount = float(m.group(1).replace(",", ""))
             confidence["total_amount"] = 0.75
+            bbox = self._find_bbox_for_text(word_boxes or [], m.group(1).strip())
+            invoice.evidence.append(EvidencePointer(
+                source_file=str(fpath), field="total_amount",
+                text_snippet=str(invoice.total_amount), bbox=bbox,
+            ))
 
         # Vendor name (first line heuristic)
         lines = [l.strip() for l in text.split("\n") if l.strip()]
         if lines:
             invoice.vendor_name = lines[0]
             confidence["vendor_name"] = 0.5
+            bbox = self._find_bbox_for_text(word_boxes or [], lines[0])
+            invoice.evidence.append(EvidencePointer(
+                source_file=str(fpath), field="vendor_name",
+                text_snippet=invoice.vendor_name, bbox=bbox,
+            ))
 
         invoice.confidence_scores = confidence
         invoice.evidence.append(EvidencePointer(source_file=str(fpath), field="text_extraction"))
         return invoice
 
-    def _parse_table_to_line_items(self, table: list[list], fpath: Path, page: int) -> list[LineItem]:
+    def _parse_table_to_line_items(
+        self,
+        table: list[list],
+        fpath: Path,
+        page: int,
+        table_bbox: tuple | None = None,
+    ) -> list[LineItem]:
         """Try to parse a table into line items."""
         items = []
         headers = [str(h).lower().strip() if h else "" for h in table[0]]
